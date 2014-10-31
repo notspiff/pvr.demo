@@ -1,20 +1,22 @@
-PROJECT(pvr.demo)
+project(pvr.demo)
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR})
 
-ENABLE_LANGUAGE(CXX)
+enable_language(CXX)
 
-FIND_PACKAGE(xbmc REQUIRED)
+find_package(kodi REQUIRED)
+find_package(kodiplatform REQUIRED)
 
-FIND_PACKAGE(xbmcplatform REQUIRED)
-INCLUDE_DIRECTORIES(${xbmcplatform_INCLUDE_DIRS}
-                    ${XBMC_INCLUDE_DIR})
+include_directories(${KODIPLATFORM_INCLUDE_DIRS}
+                    ${KODI_INCLUDE_DIR})
 
-SET(DEPLIBS ${xbmcplatform_LIBRARIES})
+set(DEPLIBS ${KODIPLATFORM_LIBRARIES})
 
-SET(PVRDEMO_SOURCES src/client.cpp
+set(PVRDEMO_SOURCES src/client.cpp
                     src/PVRDemoData.cpp)
 
 build_addon(pvr.demo PVRDEMO DEPLIBS)
+
+include(CPack)
