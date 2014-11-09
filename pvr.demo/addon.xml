@@ -13,7 +13,7 @@
     library_linux="pvr.demo.so"
     library_osx="pvr.demo.dylib"
     library_windx="pvr.demo.dll"
-    library_android="pvr.demo.so" />
+    library_android="libpvr.demo.so" />
   <extension point="xbmc.addon.metadata">
     <summary lang="am">የ PVR ደንበኛ ናሙና </summary>
     <summary lang="bg">Демонстрация на ПВР клиента</summary>
